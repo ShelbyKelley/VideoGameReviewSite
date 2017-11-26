@@ -1,4 +1,4 @@
-<%= form_with(model: game, local: true) do |form| %>
+<%= form_with model: @game, multipart: true, local: true do |form| %>
   <% if game.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(game.errors.count, "error") %> prohibited this game from being saved:</h2>
@@ -29,6 +29,11 @@
   <div class="field">
     <%= form.label :esrb %>
     <%= form.text_field :esrb, id: :game_esrb %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image, id: :game_image %>
   </div>
 
   <div class="actions">
