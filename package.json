@@ -1,5 +1,7 @@
 {
   "name": "VideoGameReviewSite",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "raty-js": "^2.8.0"
+  }
 }

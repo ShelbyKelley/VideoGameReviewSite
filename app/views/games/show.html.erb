@@ -24,7 +24,24 @@
 							</tr>
 						</tbody>
 					</table>
+					<%= link_to "Write a Review", new_game_review_path(@game) %>
 				</div>
+			</div>
+			<div class="col-md-7 col-md-offset-1">
+				<h1 class="review_title"><%= @game.title %></h1>
+				<p><%= @game.description %></p>
+
+				<% if @reviews.blank? %>
+					<h3>No reviews, would you like to be the first?</h3>
+					<%= link_to "Write a Review", new_game_review_path(@game), class: "btn btn-danger" %>
+				<% else %>
+				<% @reviews.each do |review| %>
+					<div class="reviews">
+						<div class="star-rating" data-score= <%= review.rating %> ></div>
+						<p><%= review.comment %></p>
+					</div>
+				<% end %>
+				<% end %>
 			</div>
 		</div>
 	</div>
@@ -32,3 +49,5 @@
 
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>
+
+
