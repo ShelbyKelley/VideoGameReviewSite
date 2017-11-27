@@ -17,6 +17,8 @@
 !/log/.keep
 !/tmp/.keep
 
+/public/system/games/images
+
 /node_modules
 /yarn-error.log
 
