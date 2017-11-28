@@ -4,7 +4,7 @@
 
   def search
     if params[:search].present?
-      @games = Game.search(params[:search])
+      @games = Game.search(params[:search], fields: [:title])
     else
       @games = Game.all
     end
